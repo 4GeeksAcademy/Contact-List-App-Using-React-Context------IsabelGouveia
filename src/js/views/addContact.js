@@ -24,7 +24,7 @@ export const AddContact = () => {
       <Link to="/contact" className="mb-3">
         <button className="btn btn-primary mb-2">Go back</button>
       </Link>
-      <form onChange={formOnChange}>
+      <form onChange={formOnChange} onSubmit={(e) => {e.preventDefault()}}>
         <div className="text-center mb-3">
           <h2>Add a new contact</h2>
         </div>
@@ -50,7 +50,7 @@ export const AddContact = () => {
             aria-describedby="emailHelp"
             placeholder="Enter email"
             value={newContact.email}
-            onChange={formOnChange} // Add the onChange attribute here
+            onChange={formOnChange} 
           />
         </div>
         <div className="form-group">
@@ -64,7 +64,7 @@ export const AddContact = () => {
             aria-describedby="phoneHelp"
             placeholder="Enter phone"
             value={newContact.phone}
-            onChange={formOnChange} // Add the onChange attribute here
+            onChange={formOnChange} 
           />
         </div>
         <div className="form-group">
@@ -78,11 +78,11 @@ export const AddContact = () => {
             aria-describedby="addressHelp"
             placeholder="Enter address"
             value={newContact.address}
-            onChange={formOnChange} // Add the onChange attribute here
+            onChange={formOnChange} 
           />
         </div>
         <button
-          type="submit"
+          type="button"
           className="btn btn-primary my-3"
           onClick={() => {
             actions.addUser(newContact);
